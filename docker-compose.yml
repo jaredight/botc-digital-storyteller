@@ -1,4 +1,3 @@
-version: '3.8'
 
 services:
   # Backend Flask API
@@ -35,9 +34,8 @@ services:
     ports:
       - "80:80"
       - "443:443"
-    depends_on:
-      backend:
-        condition: service_healthy
+    depends_on: [backend]
+    # condition: service_healthy # failing healthcheck
     networks:
       - botc-network
     healthcheck:

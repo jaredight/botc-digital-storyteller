@@ -23,9 +23,12 @@ export function SocketProvider({ children }) {
   useEffect(() => {
     if (user) {
       // Initialize socket connection when user is authenticated
+      // autoConnect: true,
       const newSocket = io('http://localhost:5000', {
+        withCredentials: true,
         autoConnect: true,
-        transports: ['websocket', 'polling']
+        // transports: ['websocket', 'polling']
+        transports: ['polling']
       })
 
       newSocket.on('connect', () => {
