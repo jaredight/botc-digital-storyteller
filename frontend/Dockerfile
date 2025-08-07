@@ -30,18 +30,19 @@ COPY --from=builder /app/dist /usr/share/nginx/html
 # Copy custom nginx configuration
 COPY nginx.conf /etc/nginx/conf.d/default.conf
 
+# Nginx needs root privileges to write to /run/nginx.pid
 # Create non-root user
-RUN addgroup -g 1001 -S nodejs && \
-    adduser -S nextjs -u 1001
+#RUN addgroup -g 1001 -S nodejs && \
+#    adduser -S nextjs -u 1001#
 
 # Set ownership
-RUN chown -R nextjs:nodejs /usr/share/nginx/html && \
-    chown -R nextjs:nodejs /var/cache/nginx && \
-    chown -R nextjs:nodejs /var/log/nginx && \
-    chown -R nextjs:nodejs /etc/nginx/conf.d
+#RUN chown -R nextjs:nodejs /usr/share/nginx/html && \
+#    chown -R nextjs:nodejs /var/cache/nginx && \
+#    chown -R nextjs:nodejs /var/log/nginx && \
+#    chown -R nextjs:nodejs /etc/nginx/conf.d
 
 # Switch to non-root user
-USER nextjs
+#USER nextjs
 
 # Expose port
 EXPOSE 80
