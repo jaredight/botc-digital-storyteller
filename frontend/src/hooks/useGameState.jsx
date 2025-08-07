@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuth } from './useAuth'
 
-const API_BASE = 'http://localhost:5000/api'
+const API_BASE = '/api'
 
 export function useGameState() {
   const { user } = useAuth()
