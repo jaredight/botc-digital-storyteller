@@ -69,6 +69,7 @@ blood-on-the-clocktower/
 │   ├── API_DOCUMENTATION.md   # Complete API reference
 │   ├── USER_GUIDE.md          # User manual and gameplay guide
 │   ├── DEPLOYMENT_SUMMARY.md  # Deployment and technical overview
+│   ├── OVERVIEW.md            # Project overview
 │   └── TODO.md                # Project roadmap and tasks
 ├── docker-compose.yml         # Development environment
 ├── docker-compose.prod.yml    # Production environment
@@ -97,7 +98,7 @@ Contains the React application with all client-side code:
 - **Lib**: Utility functions and helpers
 - **Configuration**: Build tools, linting, and dependency management
 
-### `/docs/` (Root Level)
+### `/docs/`
 Project documentation accessible to all stakeholders:
 - API documentation for developers
 - User guides for players and hosts
